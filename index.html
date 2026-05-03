@@ -28,7 +28,7 @@ backdrop-filter:blur(2px);
 transition:all .4s;
 column-gap:40px;
 }
-nav.scrolled{background:#4b2e1f;padding:14px 60px;border-bottom:}
+nav.scrolled{background:#4b2e1f;padding:14px 60px;}
 .nav-logo{
 display:flex;
 align-items:center;
@@ -62,15 +62,31 @@ padding:0;
 .nav-cta:hover{background:var(--gold-light);}
 
 /* HERO */
-#hero{
-min-height:90vh;
-padding-top:60px;
-display:grid;
-grid-template-columns:70% 30%;
-position:relative;
-overflow:hidden;
+#hero {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  position: relative;
+  padding-top: 115px;
 }
-.hero-visual{position:relative;overflow:hidden;background:#4b2e1f;}
+
+.hero-left {
+  position: relative;
+  grid-column: 1 / 2;
+}
+
+.hero-content {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Overlay only for desktop */
+.hero-visual-caption,
+.quote {
+  position: absolute;
+}
+.hero-visual{position:relative;overflow:hidden;background:#4b2e1f;display: flex;flex-direction: column;}
 .hero-visual img{
 width:100%;
 height:100%;
@@ -83,24 +99,36 @@ background:#4b2e1f;
 }
 
 .hero-visual-caption{
-position:absolute;
-bottom:40px;
-left:40px;
-right:40px;
-background:transparent;
+  grid-column: 1 / 2;
+  width: 100%;
+  padding: 12px 24px;
+  background: transparent;
 }
-.hero-visual-caption .tag{font-family:'Cinzel',serif;font-size:11px;letter-spacing:.3em;color:var(--gold);margin-bottom:10px;opacity:.9;}
+.hero-visual-caption .tag{
+position:static;
+font-size:16px;
+text-align:left;
+margin:0;
+max-width:100%;
+opacity:1;
+font-family:'Cinzel',serif;
+font-size:11px;
+letter-spacing:.3em;
+color:var(--gold);
+margin-left: -25px;
+}
 .hero-visual-caption .quote{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--cream);opacity:.75;line-height:1.5;}
+.quote{position:absolute;bottom:20px;right:auto;width:auto;max-width:400px;font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:var(--cream);opacity:.75;line-height:1.5;}
 .hero-content{
 display:flex;
 flex-direction:column;
 justify-content:center;
-padding:50px 80px 40px;
+padding:0px 80px 40px;
 background:var(--black);
 position:relative;
 }
 .hero-content::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:1px;background:linear-gradient(to bottom,transparent,rgba(200,151,58,.5),transparent);}
-.hero-tag{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:32px;display:flex;align-items:center;gap:16px;}
+.hero-tag{font-size:9px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:25px;margin-top:45px;display:flex;align-items:center;gap:16px;}
 .hero-tag::before{content:'';display:block;width:40px;height:1px;background:var(--gold);}
 .hero-h1{font-family:'Cormorant Garamond',serif;font-size:76px;font-weight:300;line-height:1;color:var(--cream);margin-bottom:12px;}
 .hero-h1 em{font-style:italic;color:var(--gold-light);}
@@ -123,7 +151,7 @@ position:relative;
 @keyframes marquee{to{transform:translateX(-50%);}}
 
 /* SECTIONS */
-section{padding:120px 60px;}
+section{padding:60px 30px;}
 .section-label{font-size:10px;letter-spacing:.45em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:flex;align-items:center;gap:16px;}
 .section-label::before{content:'';width:30px;height:1px;background:var(--gold);}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;line-height:1.1;margin-bottom:20px;}
@@ -192,7 +220,6 @@ section{padding:120px 60px;}
 .filter-opt:hover,.filter-opt.active{color:var(--gold-light);}
 .filter-dot{width:8px;height:8px;border-radius:50%;border:1px solid currentColor;flex-shrink:0;transition:background .2s;}
 .filter-opt.active .filter-dot{background:var(--gold);}
-.booking-main{}
 .day-tabs{display:flex;gap:4px;margin-bottom:32px;overflow-x:auto;}
 .day-tab{padding:12px 18px;background:transparent;border:1px solid rgba(14,12,10,.15);color:rgba(14,12,10,.5);cursor:pointer;font-family:'Jost',sans-serif;font-size:12px;letter-spacing:.1em;transition:all .2s;flex-shrink:0;white-space:nowrap;}
 .day-tab.active{background:var(--black);color:var(--gold);border-color:var(--black);}
@@ -633,11 +660,103 @@ width:auto;
 }
 
 section{
-padding:80px 24px;
+padding:40px 24px;
+}
+
+#hero {
+    display: block; /* stack everything */
+    padding-left: 10px;
+    padding-top: 66px;
+    padding-right: 10px;
+  }
+
+  .hero-left {
+    position: static;
+  }
+
+  /* Remove absolute positioning on mobile */
+  .hero-visual-caption,
+  .quote {
+    position: static;
+    margin-top: 10px;
+  }
+
+  .quote {
+    font-size: 16px;
+    line-height: 1.5;
+    opacity: 1;
+  }
+
+  .hero-content {
+    padding-top: 20px;
+  }
+
+.hero-visual{
+ padding-top: 40px; 
+min-height:300px;
+}
+
+.hero-visual img{
+height:100%;
+object-fit:cover;
+}
+
+.quote{
+position:static;
+font-size:16px;
+text-align:left;
+margin:0;
+max-width:100%;
+opacity:1;
+}
+
+.hero-visual-caption{
+  grid-column: 1 / -1; /* full width */
+  padding: 1px 20px;
+}
+
+.tag{
+position:static;
+font-size:16px;
+text-align:left;
+margin:0;
+max-width:100%;
+opacity:1;
+font-family:'Cinzel',serif;
+font-size:11px;
+letter-spacing:.3em;
+color:var(--gold);
+margin-left: -25px;
 }
 
 .hero-content{
-padding:80px 32px;
+padding:40px 24px;
+}
+
+.hero-content::before{
+display:none;
+}
+
+.hero-h1{
+font-size:40px;
+}
+
+.hero-buttons{
+flex-direction:column;
+gap:12px;
+}
+
+.btn-primary,
+.btn-outline{
+width:100%;
+padding:14px 24px;
+text-align:center;
+}
+
+.hero-stats{
+flex-direction:column;
+gap:32px;
+margin-top:32px;
 }
 
 .hero-h1{
@@ -691,8 +810,6 @@ grid-template-columns:1fr 1fr;
 body{font-family:'Jost','Segoe UI',Tahoma,sans-serif;}
 .nav-logo,.pricing-name,.class-name,.sidebar-title,.footer-col-title,.adm-nav-brand{font-family:'Cinzel','Palatino Linotype',Georgia,serif;}
 .hero-h1,.section-title,.pricing-price,.slot-time,.about-card-quote,.cal-month-label{font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif;}
-.hero-visual{background:linear-gradient(135deg,#1a1008,#2a1f15,#0e0c0a);}
-
 /* CALLBACK POPUP */
 .callback-overlay{
   position:fixed;
@@ -826,29 +943,74 @@ Request a Call
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-visual">
-    <img onerror="this.style.background='linear-gradient(135deg,#2a1f15,#1a1008)';this.style.opacity='0.5';this.removeAttribute('src')" src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1776960844/AP-UI_mtpvqr.jpg" alt="Yoga practice" crossorigin="anonymous">
-    <div class="hero-visual-overlay"></div>
+
+  <!-- LEFT SIDE -->
+  <div class="hero-left">
+
+    <div class="hero-visual">
+      <img 
+        src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1776960844/AP-UI_mtpvqr.jpg" 
+        alt="Pilates practice"
+        onerror="this.style.background='linear-gradient(135deg,#2a1f15,#1a1008)';this.style.opacity='0.5';this.removeAttribute('src')"
+      >
+    </div>
+
+    <!-- Caption -->
     <div class="hero-visual-caption">
       <div class="tag">✦ AURIX PILATES</div>
-      <div class="quote">"Precision, control,<br>and strength from within"</div>
     </div>
+
+    <!-- Quote -->
+    <div class="quote">
+      "Precision, control,<br>and strength from within"
+    </div>
+
   </div>
+
+
+  <!-- RIGHT SIDE -->
   <div class="hero-content">
-    <div class="hero-tag">Est. 2018 · Brookefield, Bengaluru</div>
-    <h1 class="hero-h1">Move with<br><em>Precision</em><br>& Grace</h1>
-<div class="hero-sub">Premium Pilates Studio · Bengaluru</div>
-<p class="hero-desc">Sculpt, strengthen and realign through expert-led Pilates. Limited to 8 members per class for focused, personalised attention every session.</p>
+
+    <div class="hero-tag">
+      Brookefield, Bengaluru
+      <span style="width:30px;height:1px;background:#c89b47;display:inline-block;"></span>
+    </div>
+
+    <h1 class="hero-h1">
+      Move with<br><em>Precision</em><br>& Grace
+    </h1>
+
+    <div class="hero-sub">
+      Premium Pilates Studio · Bengaluru
+    </div>
+
+    <p class="hero-desc">
+      Sculpt, strengthen and realign through expert-led Pilates. 
+      Limited to 8 members per class for focused, personalised attention every session.
+    </p>
+
     <div class="hero-buttons">
       <a href="#pricing" class="btn-primary">Explore Plans</a>
       <a href="#classes" class="btn-outline">Explore Classes</a>
     </div>
+
     <div class="hero-stats">
-      <div class="stat"><div class="stat-num">8</div><div class="stat-label">Max per Session</div></div>
-      <div class="stat"><div class="stat-num">6+</div><div class="stat-label">Pilates Formats</div></div>
-      <div class="stat"><div class="stat-num">6</div><div class="stat-label">Expert Instructors</div></div>
+      <div class="stat">
+        <div class="stat-num">8</div>
+        <div class="stat-label">Max per Session</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Pilates Formats</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Expert Instructors</div>
+      </div>
     </div>
+
   </div>
+
 </section>
 
 <!-- MARQUEE -->
@@ -1048,22 +1210,22 @@ setInterval(()=>{
   <div class="teachers-wrapper">
 
     <div class="teacher-card t1 fade-up">
-      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1776607912/Anshu_kprp2c.jpg" alt="Anshu">
+      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/c_fill,w_180,h_180,g_auto/v1776607912/Anshu_kprp2c.jpg" alt="Anshu">
       <span>Anshu</span>
     </div>
 
     <div class="teacher-card t2 fade-up">
-      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1776607912/Meenu_wnqtu9.jpg" alt="Meenu">
+      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/c_fill,w_180,h_180,g_auto/v1776607912/Meenu_wnqtu9.jpg" alt="Meenu">
       <span>Meenu</span>
     </div>
 
     <div class="teacher-card t3 fade-up">
-      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1776607912/Ashish_uvk8ri.jpg" alt="Ashish">
+      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/c_fill,w_180,h_180,ar_1:1,g_auto/v1776607912/Ashish_uvk8ri.jpg" alt="Ashish">
       <span>Ashish</span>
     </div>
 
     <div class="teacher-card t4 fade-up">
-      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1776607912/Mohit_Tomar_d0dpej.jpg" alt="Mohit">
+      <img src="https://res.cloudinary.com/dtrdqb6sq/image/upload/c_fill,w_180,h_180,g_auto/v1776607912/Mohit_Tomar_d0dpej.jpg" alt="Mohit">
       <span>Mohit</span>
     </div>
 
@@ -1088,16 +1250,16 @@ setInterval(()=>{
 
 <style>
 #instructors{
-  padding:120px 40px;
-  background:#4b2e1f);
+  padding:5px 40px;
+  background:#4b2e1f;
   overflow:hidden;
 }
 
 .teachers-wrapper{
   max-width:1400px;
   margin:auto;
-  min-height:850px;
   position:relative;
+  min-height: 650px;
 }
 
 /* cards */
@@ -1160,32 +1322,167 @@ setInterval(()=>{
 }
 
 /* mobile */
-@media(max-width:992px){
-  .teachers-wrapper{
-    min-height:auto;
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+@media(max-width:768px){
+  #instructors{
+    padding:60px 24px;
+    background:#4b2e1f;
   }
 
-  .teacher-card,
-  .teacher-content{
-    position:relative;
-    top:auto;
-    left:auto;
-    right:auto;
-    bottom:auto;
-    transform:none;
-    width:100%;
+  .teachers-wrapper{
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    padding: 20px 24px;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 200;
+
   }
 
   .teacher-card{
-    height:220px;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    flex-shrink: 0;
+  }
+
+  /* Horizontal landscape zigzag */
+  .teacher-card.t1{
+    width: 75px;
+    height: 100px;
+    order: 1;
+    margin-top: 0;
+  }
+
+  .teacher-card.t2{
+    width: 60px;
+    height: 85px;
+    order: 2;
+    margin-top: 50px;
+  }
+
+  .teacher-card.t3{
+    width: 75px;
+    height: 100px;
+    order: 3;
+    margin-top: 0;
+  }
+
+  .teacher-card.t4{
+    width: 60px;
+    height: 85px;
+    order: 4;
+    margin-top: 50px;
+  }
+
+  .teacher-card.t5{
+    width: 75px;
+    height: 100px;
+    order: 5;
+    margin-top: 0;
   }
 
   .teacher-content{
-    grid-column:1/-1;
-    margin-top:30px;
+    display: none;
+  }
+
+  #instructors{
+    padding: 40px 16px;
+  }
+
+  .teacher-card span{
+    font-size: 11px;
+  }
+
+  .teacher-sub{
+    font-size: 13px;
+  }
+}
+
+@media(max-width:480px){
+  .teachers-wrapper{
+    width: 100%;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 10px 24px;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 300px;
+  }
+
+  .teacher-card{
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    flex-shrink: 0;
+  }
+
+  /* Horizontal landscape zigzag */
+  .teacher-card.t1{
+    width: 75px;
+    height: 100px;
+    order: 1;
+    margin-top: 0;
+  }
+
+  .teacher-card.t2{
+    width: 60px;
+    height: 85px;
+    order: 2;
+    margin-top: 50px;
+  }
+
+  .teacher-card.t3{
+    width: 75px;
+    height: 100px;
+    order: 3;
+    margin-top: 0;
+  }
+
+  .teacher-card.t4{
+    width: 60px;
+    height: 85px;
+    order: 4;
+    margin-top: 50px;
+  }
+
+  .teacher-card.t5{
+    width: 75px;
+    height: 100px;
+    order: 5;
+    margin-top: 0;
+  }
+
+  .teacher-content{
+    display: block;
+    width: 100%;
+    margin-top: 2px;
+    text-align: center;
+    order: 6;
+  }
+
+  #instructors{
+    padding: 30px 16px;
+  }
+
+  .teacher-card span{
+    font-size: 11px;
+  }
+
+  .teacher-sub{
+    font-size: 13px;
   }
 }
 </style>
@@ -1359,9 +1656,7 @@ Send Message
   <div>
     <div class="footer-col-title">Studio Hours</div>
     <div class="footer-hours">
-      <div class="footer-hour"><span>Mon – Fri</span><span>6AM – 9PM</span></div>
-      <div class="footer-hour"><span>Saturday</span><span>7AM – 8PM</span></div>
-      <div class="footer-hour"><span>Sunday</span><span>7AM – 6PM</span></div>
+       <div class="footer-hour"><span>Everyday</span><span>6AM – 9PM</span></div>
     </div>
   </div>
 </footer>
