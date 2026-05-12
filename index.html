@@ -634,7 +634,7 @@ footer{background:var(--black-soft);padding:60px;border-top:1px solid rgba(200,1
 @media(min-width:1440px){
   nav{padding:20px 80px;}
   nav.scrolled{padding:14px 80px;}
-  section{padding:80px 60px;}
+  section{padding:35px 60px;}
   .section-title{font-size:64px;}
   .hero-h1{font-size:62px;}
   .classes-grid,.pricing-grid,.instructors-grid,.video-grid{grid-template-columns:repeat(1fr);}
@@ -655,7 +655,7 @@ footer{background:var(--black-soft);padding:60px;border-top:1px solid rgba(200,1
 /* Responsive - Medium Screens (1024px - 1440px) */
 @media(max-width:1439px) and (min-width:1025px){
   nav{padding:18px 50px;column-gap:30px;}
-  section{padding:70px 50px;}
+  section{padding:30px 50px;}
   .hero-h1{font-size:52px;}
   .section-title{font-size:48px;}
 }
@@ -1011,7 +1011,7 @@ box-shadow:0 0 0 3px rgba(231,124,97,0.18) !important;
     <li><a href="#about">About</a></li>
     <li><a href="#classes">Classes</a></li>
     <li><a href="#pricing">Plans</a></li>
-    <!-- <li><a href="#instructors">Instructors</a></li>  -->
+    <li><a href="#gallery">Gallery</a></li> 
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="nav-right">
@@ -1149,9 +1149,9 @@ Request a Call
 </div>
     <h2 class="section-title">A Space to <em>Breathe</em><br>& Transform</h2>
 
-    <p class="about-text">Aurix Pilates is more than a studio — it's a sanctuary. Designed with elegance, calm interiors, and premium equipment to create an elevated wellness experience.</p>
+    <p class="about-text">AURIX PILATES is a premium wellness studio offering refined group and personalized Pilates experiences in a calm, luxury environment. With international-standard equipment, elegant ambience, and expert-guided movement sessions, AURIX is designed to help you build strength, improve posture, and move with greater balance and confidence.</p>
 
-    <p class="about-text">Every corner of our studio is built to inspire focus, comfort, and transformation through movement in a luxurious setting.</p>
+    <!-- <p class="about-text">Every corner of our studio is built to inspire focus, comfort, and transformation through movement in a luxurious setting.</p> -->
 
     <div class="about-features">
       <div class="about-feat"><div class="about-feat-icon">✦</div><div><div class="about-feat-title">Elegant Interiors</div><div class="about-feat-desc">Premium design with calm luxury aesthetics</div></div></div>
@@ -1267,11 +1267,11 @@ setInterval(()=>{
     </div>
     <div class="class-card fade-up">
       <img onerror="this.style.background='linear-gradient(135deg,#2a1f15,#1a1008)';this.style.opacity='0.5';this.removeAttribute('src')" class="class-card-img" src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1778389285/IMG_6159_pgtogb.jpg" alt="Barre Pilates" crossorigin="anonymous">
-      <div class="class-card-body"><div class="class-name">Wunda Chair</div><div class="class-level">Power • Control • Balance</div><p class="class-desc">Compact equipment training that challenges strength, coordination, and core stability. Builds balance, posture, and full-body control through dynamic resistance exercises.</p><div class="class-meta"><span>👥 8 spots</span></div></div>
+      <div class="class-card-body"><div class="class-name">Ladder Barrel</div><div class="class-level">Power • Control • Balance</div><p class="class-desc">Compact equipment training that challenges strength, coordination, and core stability. Builds balance, posture, and full-body control through dynamic resistance exercises.</p><div class="class-meta"><span>👥 8 spots</span></div></div>
     </div>
     <div class="class-card fade-up">
       <img onerror="this.style.background='linear-gradient(135deg,#2a1f15,#1a1008)';this.style.opacity='0.5';this.removeAttribute('src')" class="class-card-img" src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1778389308/IMG_6150_zlou2r.jpg" alt="Prenatal Pilates" crossorigin="anonymous">
-      <div class="class-card-body"><div class="class-name">Ladder Barrel</div><div class="class-level">Stretch • Mobility • Posture</div><p class="class-desc">Curved apparatus training focused on spinal mobility, flexibility, and posture correction. Enhances core support while improving alignment and movement freedom.</p><div class="class-meta"><span>👥 8 spots</span></div></div>
+      <div class="class-card-body"><div class="class-name">Wunda Chair</div><div class="class-level">Stretch • Mobility • Posture</div><p class="class-desc">Curved apparatus training focused on spinal mobility, flexibility, and posture correction. Enhances core support while improving alignment and movement freedom.</p><div class="class-meta"><span>👥 8 spots</span></div></div>
     </div>
     <div class="class-card fade-up">
       <img onerror="this.style.background='linear-gradient(135deg,#2a1f15,#1a1008)';this.style.opacity='0.5';this.removeAttribute('src')" class="class-card-img" src="https://res.cloudinary.com/dtrdqb6sq/image/upload/v1776510508/Spine_corrector_kqagsv.jpg" alt="Clinical Pilates" crossorigin="anonymous">
@@ -1296,7 +1296,200 @@ setInterval(()=>{
     <!-- Rendered by JS from planData -->
   </div>
 </section>
+<!-- GALLERY SECTION -->
+<section id="gallery" class="gallery-container">
+  <div class="section-label">Our Content
+    <span style="width:30px;height:1px;background:#c89b47;display:inline-block;"></span>
+  </div>
+  <h2 class="section-title">Pilates <em>Gallery</em></h2>
+  
+  <div class="carousel-viewport">
+    <div class="carousel-track">
+      <!-- Added ?enablejsapi=1 and mute=1 for auto-play compliance -->
+      <div class="gallery-item">
+        <iframe id="player0" src="https://www.youtube.com/embed/7M2MpxXXiaY?enablejsapi=1&rel=0&mute=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="gallery-item">
+        <iframe id="player1" src="https://www.youtube.com/embed/6yc1ipaX46I?enablejsapi=1&rel=0&mute=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="gallery-item">
+        <iframe id="player2" src="https://www.youtube.com/embed/YYcBjEBrHHc?enablejsapi=1&rel=0&mute=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="gallery-item">
+        <iframe id="player3" src="https://www.youtube.com/embed/yixi1eFsBZ0?enablejsapi=1&rel=0&mute=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="gallery-item">
+        <iframe id="player4" src="https://www.youtube.com/embed/NIM_Gesu4vY?enablejsapi=1&rel=0&mute=1" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
+  <button class="control-btn prev" id="prevBtn">&#10094;</button>
+  <button class="control-btn next" id="nextBtn">&#10095;</button>
+</section>
+
+<style>
+.gallery-container {
+  position: relative;
+  padding: 20px 50px;
+  overflow: hidden;
+}
+
+.section-label, .section-title {
+  margin-bottom: 10px;
+}
+
+.carousel-viewport {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: transform;
+  position: absolute;
+  left: 0;
+}
+
+.gallery-item {
+  min-width: 300px;
+  aspect-ratio: 9/16;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  opacity: 0.2;
+  transform: scale(0.85);
+  background: #111;
+  pointer-events: none;
+}
+
+.gallery-item.active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+  box-shadow: 0 0 40px rgba(200, 155, 71, 0.3);
+}
+
+.gallery-item iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.control-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  color: #c89b47;
+  border: 1px solid #c89b47;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  font-size: 1.2rem;
+}
+
+.prev { left: 5%; }
+.next { right: 5%; }
+
+@media (max-width: 768px) {
+  .gallery-item { min-width: 250px; }
+  .prev { left: 15px; }
+  .next { right: 15px; }
+}
+</style>
+
+<script>
+// Load YouTube IFrame API
+var tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let players = {};
+let currentIndex = 2; 
+
+// Initialize players when API is ready
+function onYouTubeIframeAPIReady() {
+  document.querySelectorAll('.gallery-item iframe').forEach((iframe, index) => {
+    players[index] = new YT.Player(iframe.id, {
+      events: {
+        'onReady': (event) => {
+          if (index === currentIndex) event.target.playVideo();
+        },
+        'onStateChange': (event) => {
+          // Check if the video that just finished is the active one
+          if (event.data === YT.PlayerState.ENDED && index === currentIndex) {
+            handleVideoEnded();
+          }
+        }
+      }
+    });
+  });
+}
+
+function handleVideoEnded() {
+  const items = document.querySelectorAll('.gallery-item');
+  currentIndex = (currentIndex + 1) % items.length;
+  updateGallery();
+}
+
+function updateGallery() {
+  const items = document.querySelectorAll('.gallery-item');
+  const track = document.querySelector('.carousel-track');
+  
+  items.forEach((item, i) => {
+    const isActive = i === currentIndex;
+    item.classList.toggle('active', isActive);
+    
+    if (players[i] && typeof players[i].playVideo === 'function') {
+      if (isActive) {
+        players[i].playVideo();
+      } else {
+        players[i].pauseVideo();
+      }
+    }
+  });
+
+  const viewportWidth = document.querySelector('.carousel-viewport').offsetWidth;
+  const itemWidth = items[0].offsetWidth;
+  const gap = 20;
+  const centerOffset = currentIndex * (itemWidth + gap);
+  const finalShift = (viewportWidth / 2) - (itemWidth / 2) - centerOffset;
+  
+  track.style.transform = `translateX(${finalShift}px)`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const nextBtn = document.getElementById('nextBtn');
+  const prevBtn = document.getElementById('prevBtn');
+
+  nextBtn.addEventListener('click', () => {
+    const items = document.querySelectorAll('.gallery-item');
+    currentIndex = (currentIndex + 1) % items.length;
+    updateGallery();
+  });
+
+  prevBtn.addEventListener('click', () => {
+    const items = document.querySelectorAll('.gallery-item');
+    currentIndex = (currentIndex - 1 + items.length) % items.length;
+    updateGallery();
+  });
+
+  window.addEventListener('resize', updateGallery);
+  
+  // Initial position setup
+  updateGallery();
+});
+</script>
 <!-- INSTRUCTORS -->
 <!-- <section id="instructors">
 
@@ -1609,9 +1802,9 @@ setInterval(()=>{
         <div>
           <div class="contact-item-label">Location</div>
           <div class="contact-item-value">
-            115/3, ITPL Main Rd, 2nd Floor<br>
-            AECS Layout, Brookefield<br>
-            Bengaluru, Karnataka 560037
+            115/3, GKR Arcade, 2nd Floor, ITPL Main Rd,<br>
+            Kundalahalli, Brookefield, Bengaluru,<br>
+            Karnataka 560037, India
           </div>
         </div>
       </div>
@@ -1644,7 +1837,7 @@ setInterval(()=>{
         <div>
           <div class="contact-item-label">Email</div>
           <div class="contact-item-value">
-            <a href="mailto:info@aurixpilates.com" style="color:inherit;text-decoration:none;">info@aurixpilates.com</a>
+            <a href="mailto:aurixpilates@gmail.com" style="color:inherit;text-decoration:none;">aurixpilates@gmail.com</a>
           </div>
         </div>
       </div>
